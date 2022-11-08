@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>桦</title>
+    <style>
+      body {
+        background-image: url("https://s1.328888.xyz/2022/08/06/uGUWh.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+      }
+      .button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        border-radius: 12px;
+      }
+      .bounce {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: #6a7ce19d;
+        height: 100%;
+        font: normal bold 6rem "Product Sans", sans-serif;
+        white-space: nowrap;
+      }
+
+      .letter {
+        animation: bounce 0.75s cubic-bezier(0.05, 0, 0.2, 1) infinite alternate;
+        display: inline-block;
+        transform: translate3d(0, 0, 0);
+        margin-top: 0.5em;
+        text-shadow: rgba(73, 237, 68, 0.429) 0 0 0.05em;
+        font: normal 500 6rem "Varela Round", sans-serif;
+      }
+      .letter:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .letter:nth-child(2) {
+        animation-delay: 0.0833333333s;
+      }
+      .letter:nth-child(3) {
+        animation-delay: 0.1666666667s;
+      }
+      .letter:nth-child(4) {
+        animation-delay: 0.25s;
+      }
+      .letter:nth-child(5) {
+        animation-delay: 0.3333333333s;
+      }
+      .letter:nth-child(6) {
+        animation-delay: 0.4166666667s;
+      }
+
+      @keyframes bounce {
+        0% {
+          transform: translate3d(0, 0, 0);
+          text-shadow: rgba(230, 182, 203, 0.402) 0 0 0.05em;
+        }
+        100% {
+          transform: translate3d(0, -1em, 0);
+          text-shadow: rgba(227, 26, 160, 0.4) 0 1em 0.35em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bounce">
+      <span class="letter" style="font-size: 40px">桦</span>
+      <span class="letter" style="font-size: 40px">的</span>
+      <span class="letter" style="font-size: 40px">第</span>
+    </div>
+    <div class="bounce">
+      <span class="letter" style="font-size: 40px">一</span>
+      <span class="letter" style="font-size: 40px">个</span>
+      <span class="letter" style="font-size: 40px">小</span>
+      <span class="letter" style="font-size: 40px">网</span>
+      <span class="letter" style="font-size: 40px">站</span>
+    </div>
+    <div style="text-align: center">
+      <span>您的位置是：</span><span id="dirAddress"></span>
+
+      <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+        window.onload = function () {
+          $.ajax({
+            url: "http://47.106.67.99/apis/getAddress/902687a057feebc71a4be9746d6e9b62",
+            type: "get",
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+              //请求成功
+              if (data.code === 200) {
+                document.getElementById("dirAddress").innerHTML = data.msg;
+              } else {
+                alert(data.msg);
+              }
+            },
+          });
+        };
+      </script>
+    </div>
+    <div
+      style="
+        text-align: center;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+      "
+    >
+      <a href="http://cyhua2004.gitee.io/xjj/" class="button">随机播放小姐姐</a>
+    </div>
+    <div
+      style="
+        text-align: center;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+      "
+    >
+      <a href="http://api.sakura.gold/ks2cytp" class="button">二次元</a>
+    </div>
+    <div
+      style="
+        text-align: center;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+      "
+    >
+      <a href="http://api.sakura.gold/ksxjjtp" class="button">小姐姐图片</a>
+    </div>
+    <div
+      style="
+        text-align: center;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+      "
+    >
+      <a href="https://cyhua2004.github.io/hua/2.html" class="button"
+        >无水印下载短视频</a
+      >
+    </div>
+    <div
+      style="
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 40px;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+      "
+    >
+      <p>制作于2022/8/5</p>
+      <img src="https://s1.328888.xyz/2022/07/08/7PSC.gif" />
+      <img
+        src="https://s1.328888.xyz/2022/07/06/fmp7.gif"
+        width="50"
+        height="50"
+      />
+      <img src="https://s1.328888.xyz/2022/07/08/7PSC.gif" />
+    </div>
+  </body>
+</html>
